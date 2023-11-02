@@ -6,8 +6,8 @@
 </script>
 
 <h3>how to play</h3>
-<div>Guess the <s>WORDLE</s><strong>NAME</strong> in {ROWS} tries.</div>
-<div>Each guess must be a valid {COLS} letter name or shorter. In case of a shorter name, fill in with "*" at the end. Hit the enter button to submit.</div>
+<div>Guess the <s>WORDLE</s> <strong>NAME</strong> in {ROWS} tries.</div>
+<div>Each guess must be a valid {COLS} letter name or shorter. In case of a shorter name, fill in with * at the end. Hit the enter button to submit.</div>
 <div>
 	After each guess, the color of the tiles will change to show how close your guess was to the
 	word.
