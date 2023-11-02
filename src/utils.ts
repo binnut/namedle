@@ -5,10 +5,17 @@ import wordList from "./words_5";
 export const ROWS = 6;
 export const COLS = 5;
 
-export const words = {
-	...wordList,
+const v = wordList.valid.filter((word) => word.length <= 5)
+	.map(word => word.toLowerCase())
+	.map(word => word.padEnd(5, "*"));
+const w = wordList.words.map(word => word.toLowerCase())
+	.map(word => word.padEnd(5, "*"));
+
+export let words = {
+	words: w,
+	valid: v,
 	contains: (word: string) => {
-		return wordList.words.includes(word) || wordList.valid.includes(word);
+		return w.includes(word) || v.includes(word);
 	},
 };
 
@@ -130,7 +137,7 @@ export function contractNum(n: number) {
 	}
 }
 
-export const keys = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
+export const keys = ["qwertyuiop", "asdfghjkl*", "zxcvbnm"];
 
 /**
  * Return a deterministic number based on the given mode and current or given time.
@@ -150,11 +157,15 @@ export function newSeed(mode: GameMode, time?: number) {
 		// 	return now - (now % ms.MINUTE);
 		case GameMode.infinite:
 			return now - (now % ms.SECOND);
+		case GameMode.name:
+		case GameMode.middle_name1:
+		case GameMode.middle_name2:
+			return now - (now % ms.YEAR);
 	}
 }
 
 export const modeData: ModeData = {
-	default: GameMode.daily,
+	default: GameMode.name,
 	modes: [
 		{
 			name: "Daily",
@@ -191,6 +202,31 @@ export const modeData: ModeData = {
 		// 	icon: "m7,200v-200l93,100l93,-100v200",
 		// 	streak: true,
 		// },
+		{
+			name: "Namn",
+			unit: ms.YEAR,
+			start: 1642370400000,	// 17/01/2022 UTC+2
+			seed: newSeed(GameMode.name),
+			historical: false,
+			streak: false,
+			useTimeZone: true,
+		},{
+			name: "Mellannamn1",
+			unit: ms.YEAR,
+			start: 1642370400000,	// 17/01/2022 UTC+2
+			seed: newSeed(GameMode.middle_name1),
+			historical: false,
+			streak: false,
+			useTimeZone: true,
+		},{
+			name: "Mellannamn2",
+			unit: ms.YEAR,
+			start: 1642370400000,	// 17/01/2022 UTC+2
+			seed: newSeed(GameMode.middle_name2),
+			historical: false,
+			streak: false,
+			useTimeZone: true,
+		},
 	]
 };
 /**

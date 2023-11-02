@@ -34,6 +34,7 @@
 		Stats,
 	} from "../utils";
 	import { letterStates, settings, mode } from "../stores";
+  import { GameMode } from "../enums";
 
 	export let word: string;
 	export let stats: Stats;
@@ -125,7 +126,22 @@
 		modeData.modes[$mode].historical = false;
 		modeData.modes[$mode].seed = newSeed($mode);
 		game = new GameState($mode, localStorage.getItem(`state-${$mode}`));
-		word = words.words[seededRandomInt(0, words.words.length, modeData.modes[$mode].seed)];
+
+		switch ($mode) {
+			case GameMode.name:
+				word = words.words[0];
+				break;
+			case GameMode.middle_name1:
+				word = words.words[1];
+				break;
+			case GameMode.middle_name2:
+				word = words.words[2];
+				break;
+			default:
+				word = words.words[seededRandomInt(0, words.words.length, modeData.modes[$mode].seed)];	
+				break;
+		}
+
 		$letterStates = new LetterStates();
 		showStats = false;
 		showRefresh = false;
@@ -140,10 +156,16 @@
 		switch (e.detail.direction) {
 			case "left":
 				$mode = ($mode + 1) % modeData.modes.length;
+				if ($mode < 3) {
+					$mode = 3;
+				}
 				toaster.pop(modeData.modes[$mode].name);
 				break;
 			case "right":
 				$mode = ($mode - 1 + modeData.modes.length) % modeData.modes.length;
+				if ($mode < 3) {
+					$mode = 5;
+				}
 				toaster.pop(modeData.modes[$mode].name);
 				break;
 		}

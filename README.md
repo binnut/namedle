@@ -1,4 +1,4 @@
-![Wordle+](https://raw.githubusercontent.com/MikhaD/wordle/main/public/img/og_1200x630.png)
+![Namedle](https://raw.githubusercontent.com/MikhaD/wordle/main/public/img/og_1200x630.png)
 <div align="center">
   <a href="https://mikhad.github.io/wordle/" ><img src="https://github.com/MikhaD/wordle/workflows/Publish/badge.svg?branch=main" alt="Publish workflow"/></a>
   <img src="https://img.shields.io/github/package-json/v/MikhaD/wordle" alt="GitHub package.json version" />
@@ -25,7 +25,7 @@ Hosted on GitHub pages [here](https://mikhad.github.io/wordle/).
 - Give Up button.
 
 ## Additional modes
-The game mode can be changed by clicking WORDLE+ at the top of the screen or swiping the board in either direction.
+The game mode can be changed by clicking Namedle at the top of the screen or swiping the board in either direction.
 
 **Hourly mode**: A new word every hour.
 

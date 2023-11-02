@@ -53,10 +53,10 @@
 			<svelte:fragment slot="title">Color Blind Mode</svelte:fragment>
 			<svelte:fragment slot="desc">High contrast colors</svelte:fragment>
 		</Setting>
-		<Setting type="dropdown" bind:value={$mode} options={modeData.modes.map((e) => e.name)}>
+		<Setting type="dropdown" bind:value={$mode} options={modeData.modes.map((e, i) =>  i >= 3 ? e.name : "")}>
 			<svelte:fragment slot="title">Game Mode</svelte:fragment>
 			<svelte:fragment slot="desc">
-				The game mode determines how often the word refreshes
+				The game mode which name to look for
 			</svelte:fragment>
 		</Setting>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->

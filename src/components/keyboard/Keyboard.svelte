@@ -27,6 +27,9 @@
 			if (e.key && /^[a-z]$/.test(e.key.toLowerCase())) {
 				return appendValue(e.key.toLowerCase());
 			}
+			if(e.key && e.key.toLocaleLowerCase() == '*') {
+				return appendValue('*');
+			}
 			if (e.key === "Backspace") return backspaceValue();
 
 			if (e.key === "Enter") return dispatch("submitWord");

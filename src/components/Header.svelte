@@ -40,14 +40,20 @@
 	<h1
 		on:click|self={() => {
 			$mode = ($mode + 1) % modeData.modes.length;
+			if ($mode < 3) {
+				$mode = 3;
+			}
 			toaster.pop(modeData.modes[$mode].name);
 		}}
 		on:contextmenu|preventDefault|self={() => {
 			$mode = ($mode - 1 + modeData.modes.length) % modeData.modes.length;
+			if ($mode < 3) {
+				$mode = 5;
+			}
 			toaster.pop(modeData.modes[$mode].name);
 		}}
 	>
-		wordle+
+		Namedle
 	</h1>
 	<div class="icons">
 		{#if showStats}
@@ -71,7 +77,7 @@
 			on:click={() => dispatch("closeTutPopUp")}
 			on:keydown={() => dispatch("closeTutPopUp")}
 		>
-			Swipe board or tap WORDLE+ to change game mode
+			Swipe board or tap Namedle to change game mode
 			<span class="ok">OK</span>
 		</div>
 	{/if}
