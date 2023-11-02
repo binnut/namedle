@@ -77,7 +77,7 @@
 			on:click={() => dispatch("closeTutPopUp")}
 			on:keydown={() => dispatch("closeTutPopUp")}
 		>
-			Swipe board or tap Namedle to change game mode
+			Swipe board or tap Namedle to change which name to guess!
 			<span class="ok">OK</span>
 		</div>
 	{/if}
