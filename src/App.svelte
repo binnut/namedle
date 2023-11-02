@@ -15,7 +15,7 @@
 	import { Toaster } from "./components/widgets";
 	import { setContext } from "svelte";
 
-	document.title = "Namedle | An infinite word guessing game";
+	document.title = "Namedle | Guess the names of the latest Furin";
 </script>
 
 <script lang="ts">
