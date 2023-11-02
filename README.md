@@ -1,3 +1,5 @@
+This is a slightly modified version of the below with the goal of using wordle as a name-reveal for a baby.
+---
 ![Namedle](https://raw.githubusercontent.com/MikhaD/wordle/main/public/img/og_1200x630.png)
 <div align="center">
   <a href="https://mikhad.github.io/wordle/" ><img src="https://github.com/MikhaD/wordle/workflows/Publish/badge.svg?branch=main" alt="Publish workflow"/></a>
