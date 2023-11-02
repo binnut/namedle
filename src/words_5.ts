@@ -1,5 +1,5 @@
 const words = {
-  words: ["LUKAS", "HANS", "FURIN"],
+  words: ["ANNA", "ELIAS", "HENRIK"],
   valid: [
     "AABAN",
     "AABDI",
