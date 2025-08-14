@@ -3,13 +3,13 @@ import { GameMode, ms } from "./enums";
 import wordList from "./words_5";
 
 export const ROWS = 6;
-export const COLS = 5;
+export const COLS = 6;
 
-const v = wordList.valid.filter((word) => word.length <= 5)
+const v = wordList.valid.filter((word) => word.length <= COLS)
 	.map(word => word.toLowerCase())
-	.map(word => word.padEnd(5, "*"));
+	.map(word => word.padEnd(COLS, "*"));
 const w = wordList.words.map(word => word.toLowerCase())
-	.map(word => word.padEnd(5, "*"));
+	.map(word => word.padEnd(COLS, "*"));
 
 export let words = {
 	words: w,
