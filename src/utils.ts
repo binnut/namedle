@@ -160,7 +160,7 @@ export function newSeed(mode: GameMode, time?: number) {
 		case GameMode.name:
 		case GameMode.middle_name1:
 		case GameMode.middle_name2:
-			return now - (now % ms.YEAR);
+			return now - (now % ms.DAY);
 	}
 }
 
@@ -204,7 +204,7 @@ export const modeData: ModeData = {
 		// },
 		{
 			name: "Namn",
-			unit: ms.YEAR,
+			unit: ms.DAY,
 			start: 1642370400000,	// 17/01/2022 UTC+2
 			seed: newSeed(GameMode.name),
 			historical: false,
@@ -212,7 +212,7 @@ export const modeData: ModeData = {
 			useTimeZone: true,
 		},{
 			name: "Mellannamn1",
-			unit: ms.YEAR,
+			unit: ms.DAY,
 			start: 1642370400000,	// 17/01/2022 UTC+2
 			seed: newSeed(GameMode.middle_name1),
 			historical: false,
@@ -220,7 +220,7 @@ export const modeData: ModeData = {
 			useTimeZone: true,
 		},{
 			name: "Mellannamn2",
-			unit: ms.YEAR,
+			unit: ms.DAY,
 			start: 1642370400000,	// 17/01/2022 UTC+2
 			seed: newSeed(GameMode.middle_name2),
 			historical: false,
